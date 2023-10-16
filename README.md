@@ -1,5 +1,5 @@
 # OSR
-Code for the paper "Recovering from Out-of-sample States via Inverse Dynamics in Offline Reinforcement Learning".
+Code for NeurIPS 2023 paper "Recovering from Out-of-sample States via Inverse Dynamics in Offline Reinforcement Learning".
 
 We have released the OSR demo v0.01.
 
