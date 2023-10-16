@@ -1,0 +1,27 @@
+name: OSR
+channels:
+    - defaults
+    - nvidia
+    - pytorch
+dependencies:
+    - python=3.8
+    - pip
+    - numpy
+    - scipy
+    - h5py
+    - matplotlib
+    - scikit-learn
+    - jupyter
+    - tqdm
+    - seaborn
+    - Cython
+    - pytorch=1.12.1
+    - cudatoolkit=11.3
+    - cuda-nvcc=11.3
+    - cudnn
+    - pip:
+        - gym
+        - absl-py
+        - git+https://github.com/Farama-Foundation/D4RL.git
+        - wandb
+        - ml_collections
