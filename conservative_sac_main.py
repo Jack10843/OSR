@@ -115,10 +115,10 @@ def main(argv):
         FLAGS.device
     )
     if FLAGS.limited_valuable:
-        writer = SummaryWriter('limited_valuable{}/cql_beta{}_alpha10_lambda1/{}_runs/mfSDC_{}_seed{}'.format(FLAGS.limited_rate, FLAGS.beta, FLAGS.env, FLAGS.env, FLAGS.seed))
+        writer = SummaryWriter('limited_valuable{}/cql_beta{}_alpha5.0_lambda0.5/{}_runs/mfSDC_{}_seed{}'.format(FLAGS.limited_rate, FLAGS.beta, FLAGS.env, FLAGS.env, FLAGS.seed))
     else:
         writer = SummaryWriter(
-            'beta{}_alpha12_lambda2/{}_runs/cql_{}_seed{}'.format(FLAGS.beta, FLAGS.env, FLAGS.env, FLAGS.seed))
+            'beta{}_alpha5.0_lambda0.5/{}_runs/cql_{}_seed{}'.format(FLAGS.beta, FLAGS.env, FLAGS.env, FLAGS.seed))
 
     if FLAGS.cql.target_entropy >= 0.0:
         FLAGS.cql.target_entropy = -np.prod(eval_sampler.env.action_space.shape).item()
@@ -188,10 +188,10 @@ def main(argv):
                     # wandb_logger.save_pickle(save_data, 'model.pkl')
                     best = score
                     if FLAGS.limited_valuable:
-                        file = open('limited_valuable{}/beta{}_alpha10_lambda1/weights/cql_model_{}_seed{}.pkl'.format(
+                        file = open('limited_valuable{}/beta{}_alpha5.0_lambda0.5/weights/cql_model_{}_seed{}.pkl'.format(
                             FLAGS.limited_rate, FLAGS.beta, FLAGS.env, FLAGS.seed), 'wb')
                     else:
-                        file = open('beta{}_alpha12_lambda2/weights/cql_model_{}_seed{}.pkl'.format(FLAGS.beta, FLAGS.env, FLAGS.seed), 'wb')
+                        file = open('beta{}_alpha5.0_lambda0.5/weights/cql_model_{}_seed{}.pkl'.format(FLAGS.beta, FLAGS.env, FLAGS.seed), 'wb')
                     pickle.dump(sac, file)
                     file.close()
 
