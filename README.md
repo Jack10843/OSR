@@ -20,6 +20,6 @@ python -m OSR.conservative_sac_main \
 If you want to run on CPU only, just add the `--device='cpu'` option.
 
 ## Credits
-The CQL implementation is based on [CQL](https://github.com/young-geng/CQL).
+The CQL implementation is based on [CQL](https://github.com/young-geng/CQL). Thanks for their sharing codes.
 
 ## Code for OSR-v and OSR-10 is coming soon...
