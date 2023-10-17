@@ -56,7 +56,7 @@ FLAGS_DEF = define_flags_with_default(
 
     beta=1e-3,
     model_path='weights/model_halfcheetah-medium-expert-v2_seed0.pkl',
-    knock_mode='s'
+    knock_mode='s',
     
 )
 
@@ -76,7 +76,17 @@ def main(argv):
 
     set_random_seed(FLAGS.seed)
 
-    knock_level = 4
+    knock_dict = ['n', 's', 'm', 'l']
+    assert FLAGS.knock_mode in knock_dict
+
+    if FLAGS.knock_mode == 'n':
+        knock_level = None
+    elif FLAGS.knock_mode == 's':
+        knock_level = 1
+    elif FLAGS.knock_mode == 'm':
+        knock_level = 2
+    else:
+        knock_level = 3
 
     eval_sampler = TrajSampler(gym.make(FLAGS.env).unwrapped, FLAGS.max_traj_length, test_mode=True, seed=FLAGS.seed)
 
