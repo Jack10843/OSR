@@ -56,7 +56,7 @@ FLAGS_DEF = define_flags_with_default(
 
     beta=1e-3,
     model_path='weights/model_halfcheetah-medium-expert-v2_seed0.pkl',
-    knock_mode='s',
+    knock_mode='n',
     
 )
 
@@ -80,7 +80,7 @@ def main(argv):
     assert FLAGS.knock_mode in knock_dict
 
     if FLAGS.knock_mode == 'n':
-        knock_level = None
+        knock_level = 0
     elif FLAGS.knock_mode == 's':
         knock_level = 1
     elif FLAGS.knock_mode == 'm':
