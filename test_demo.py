@@ -55,6 +55,9 @@ FLAGS_DEF = define_flags_with_default(
     logging=WandBLogger.get_default_config(),
 
     beta=1e-3,
+    model_path='weights/model_halfcheetah-medium-expert-v2_seed0.pkl',
+    knock_mode='s'
+    
 )
 
 
@@ -77,7 +80,7 @@ def main(argv):
 
     eval_sampler = TrajSampler(gym.make(FLAGS.env).unwrapped, FLAGS.max_traj_length, test_mode=True, seed=FLAGS.seed)
 
-    path = './standard_kl_data/beta1e-3_alpha5_lambda1/weights/model_{}_seed{}.pkl'.format(FLAGS.env, FLAGS.seed)
+    path = FLAGS.model_path
 
     file = open(path, 'rb')
     sac = pickle.load(file)
