@@ -14,10 +14,18 @@ $ source activate [OSR]
 ## Run Experiments
 You can run OSR experiments using the following command:
 ```
-python -m OSR.conservative_sac_main \
+python -m conservative_sac_main \
     --env [ENVIRONMENT]
 ```
 If you want to run on CPU only, just add the `--device='cpu'` option.
+
+You can run OSR experiments on OOSMuJoCo following command:
+```
+python -m test_demo \
+    --env [ENVIRONMENT] \
+    --knock_mode [n, s, m, l]
+```
+'knock_mode': None (n); Slight (s); Moderate (m); Large (l).
 
 ## Credits
 The CQL implementation is based on [CQL](https://github.com/young-geng/CQL). Thanks for their sharing codes.
